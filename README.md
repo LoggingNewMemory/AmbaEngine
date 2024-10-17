@@ -20,5 +20,5 @@ Features:
 - SkiaVK render
 - 2 Free Wallpaper by dev
 
-[SUPPORT WITH MONEY](https://saweria.co/kanagawayamada)
+[SUPPORT WITH MONEY](https://saweria.co/kanagawayamada) <br />
 [SUPPORT WITHOUT MONEY](https://t.me/KanagawaLabCom/3415)
