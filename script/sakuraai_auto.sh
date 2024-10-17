@@ -41,6 +41,8 @@ am start -a android.intent.action.MAIN -e toasttext "⚙️ AmbaEngine Starting"
 
 # Start AI
 setprop sakuraai.mode notset
+prev_screen_status=""
+
 while true; do
    app_list_filter="grep -o -e applist.app.add"
    while IFS= read -r applist || [[ -n "$applist" ]]; do
@@ -63,15 +65,18 @@ while true; do
        sh $BAL
      fi
    fi
+
    screen_status=$(dumpsys window | grep "mScreenOn" | grep false)
    if [[ "$screen_status" != "$prev_screen_status" ]]; then
       prev_screen_status="$screen_status"
-      if [[ "$screen_status" ]]; then
-         if [[ $(getprop sakuraai.mode) == "powersaver" ]]; then
-            echo " "
-         else
-            sh $SAV
-         fi
+   fi
+
+   # Trigger powersaver mode if the screen is off
+   if [[ "$screen_status" ]]; then
+      if [[ $(getprop sakuraai.mode) == "powersaver" ]]; then
+         echo " "
+      else
+         sh $SAV
       fi
    fi
 done
