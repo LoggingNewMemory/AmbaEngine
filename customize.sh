@@ -61,4 +61,4 @@ if [ ! -e /storage/emulated/0/SakuraAi/applist_perf.txt ]; then
   cp -f $MODPATH/script/applist_perf.txt /storage/emulated/0/SakuraAi
 fi
 
-am start -a android.intent.action.VIEW -d https://t.me/KanagawaLabAnnouncement/131 >/dev/null 2>&1 &
+am start -a android.intent.action.VIEW -d https://t.me/KanagawaLabAnnouncement/132 >/dev/null 2>&1 &
